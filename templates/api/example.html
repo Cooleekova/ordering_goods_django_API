@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+<html>
+    <head>
+        {% block head %}
+        <title>Главная страница</title>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% include "user_login_button.html" %}
+        <h1>Это главная страница</h1>
+        <p>Добро пожаловать в мой Джанго-проект</p>
+        {{object.id}} - {{ object.name }}
+        {% endblock %}
+    </body>
+
+
+
+</html>

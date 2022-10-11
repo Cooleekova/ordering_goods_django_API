@@ -1,0 +1,25 @@
+# Джанго + DRF
+Django
+django-rest-passwordreset
+djangorestframework
+django-filter
+django-debug-toolbar
+drf-spectacular
+python-dotenv
+psycopg2
+requests
+
+# Celery + redis
+Celery
+redis
+
+# работа с YAML
+PyYAML
+
+# testing
+pytest
+pytest-django
+coverage
+pytest-cov
+model_bakery
+djoser

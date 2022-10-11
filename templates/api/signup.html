@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<html>
+    <head>
+        {% block head %}
+        <title>Форма регистрации</title>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <form method="POST" class="form-group"> {% csrf_token %}
+
+        {% for field in registration_form %}
+            <p>
+                {{ field.label_tag }}
+                {{ field }}
+
+                {% for error in field.errors %}
+                    <p style="color:red;">{{ error }}</p>
+                {% endfor %}
+            </p>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-success">SIGN-UP</button>
+        </form>
+        {% endblock %}
+    </body>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+
+<html>
+    <head>
+        {% block head %}
+         <title>Список товаров</title>
+        <style type="text/css">
+           TABLE {
+            background: #e4f4fc; /* Цвет фона таблицы */
+            border: 5px double #000; /* Рамка вокруг таблицы */
+           }
+           TD, TH {
+            padding: 5px; /* Поля вокруг текста */
+            border: 1px solid #fff; /* Рамка вокруг ячеек */
+           }
+        </style>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        {% include "user_login_button.html" %}
+
+<table>
+
+<tr>
+    <td>Магазин</td>
+    <td>Товар</td>
+    <td>Цена</td>
+    <td>В наличии</td>
+</tr>
+<tr>
+    {% for i in context %}
+    <td>{{ i.shop }}</td>
+    <td><a href='{{ i.get_absolute_url }}'> {{ i.product }} </a></td>
+    <td>{{ i.price }} рублей</td>
+    <td>{{ i.quantity }} шт</td>
+</tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+</body>
+
+
+</html>
+
+

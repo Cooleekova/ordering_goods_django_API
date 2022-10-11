@@ -1,0 +1,22 @@
+<html>
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'api/style.css' %}"/>
+
+<!--    <button class="btn btn-primary btn-lg"><a href="{% url 'login' %}">Log In</a></button>-->
+<!--    <button class="btn btn-primary btn-lg"><a href="{% url 'logout' %}">Log Out</a></button>-->
+<!--    <br>-->
+<!--    <br>-->
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <title></title>
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    <h1>BASE</h1>
+    {% endblock %}
+</body>
+</html>
+

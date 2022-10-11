@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% block head %}
+         <title>Подтверждение регистрации</title>
+{% endblock %}
+
+{% block body %}
+{% if form.errors %}
+<p>Your email or token invalid. Please try again.</p>
+{% endif %}
+
+<form method="post" action="{% url 'api:confirm-account' %}">
+{% csrf_token %}
+<table>
+<tr>
+    <td> <input type="text" id="email" class="fadeIn second" name="email" placeholder="email">{{ form.user }}</td>
+</tr>
+<tr>
+    <td><input type="text" id="token" class="fadeIn third" name="token" placeholder="token">{{ form.token }}</td>
+</tr>
+</table>
+<button type="submit" class="btn btn-primary btn-lg">SUBMIT TOKEN</button>
+
+</form>
+
+
+{% endblock %}
+{% endblock %}
+
+
+

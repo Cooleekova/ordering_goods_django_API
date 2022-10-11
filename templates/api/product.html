@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% block head %}
+<head>
+    <title>Карточка товара</title>
+    <style type="text/css">
+           TABLE {
+            border: 5px solid #ADD8E6; /* Рамка вокруг таблицы */
+           }
+           TD, TH {
+            border: 1px solid #ADD8E6; /* Рамка вокруг ячеек */
+           }
+        </style>
+</head>
+{% endblock %}
+
+{% block body %}
+
+{% include "user_login_button.html" %}
+
+{% csrf_token %}
+
+<table>
+    {% for i in context %}
+  <tr>
+      <th><h3>Категория</h3></th>
+      <th><h3>Товар</h3></th>
+  </tr>
+    <tr>
+        <td><p>{{ i.category.name }}</p></td>
+        <td><p>{{ i.name }}</p></td>
+  </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
+
+{% endblock %}
